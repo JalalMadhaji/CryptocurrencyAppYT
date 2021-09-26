@@ -21,7 +21,7 @@ private val savedStateHandle: SavedStateHandle) : ViewModel() {
     val state : State<CoinDetailState> = _state
 
     init {
-        val coinId = savedStateHandle.get<String>(Constants.COIN_ID)?.let {
+        savedStateHandle.get<String>(Constants.COIN_ID)?.let {
             getCoinDetail(it)
         }
     }
